@@ -126,8 +126,8 @@ def pregunta_04():
     gridsearchcv = GridSearchCV(
         estimator=estimator,
         param_grid=param_grid,
-        ___ = ____  
-        ___ = ____  
+        #___ = ____  
+        #___ = ____  
     )
 
     return gridsearchcv
