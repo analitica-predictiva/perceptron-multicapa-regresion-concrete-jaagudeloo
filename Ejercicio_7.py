@@ -16,16 +16,16 @@ def pregunta_01():
     Carga y separación de los datos en `X` `y`
     """
     # Lea el archivo `concrete.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('concrete.csv') 
+    df = pd.read_csv('concrete.csv')
 
     # Asigne la columna `strength` a la variable `y`.
-    y = df['strength'] 
+    y = df['strength']
 
     # Asigne una copia del dataframe `df` a la variable `X`.
     X = df.copy()
 
     # Remueva la columna `strength` del DataFrame `X`.
-    X = X.drop('strength', axis = 1)  
+    X = X.drop('strength', axis = 1)
 
     # Retorne `X` y `y`
     return X, y
@@ -54,7 +54,7 @@ def pregunta_02():
         y,  
         test_size = 0.25,  
         random_state = 12453,  
-    )  
+    )
 
     # Retorne `X_train`, `X_test`, `y_train` y `y_test`
     return x_train, x_test, y_train, y_test
@@ -78,11 +78,11 @@ def pregunta_03():
         steps=[
             (
                 "minmaxscaler",
-                MinMaxScaler(),  
+                MinMaxScaler(),
             ),
             (
                 "mlpregressor",
-                MLPRegressor(), 
+                MLPRegressor(),
             ),
         ],
     )
@@ -98,6 +98,7 @@ def pregunta_04():
 
     # Importe GridSearchCV
     from sklearn.model_selection import GridSearchCV
+    #from sklearn.metrics import r2_score
 
     # Cree una malla de búsqueda para el objecto GridSearchCV
     # con los siguientes parámetros de búesqueda:
@@ -153,16 +154,16 @@ def pregunta_05():
     estimator.fit(x_train, y_train)
 
     # Pronostique para las muestras de entrenamiento y validacion
-    y_train_pred = estimator.predict(x_train)  
-    y_test_pred = estimator.predict(x_test)  
+    y_train_pred = estimator.predict(x_train)
+    y_test_pred = estimator.predict(x_test)
 
     # Calcule el error cuadrático medio de las muestras
     mse_train = mean_squared_error(  
-        y_train,
-        y_train_pred,
+        y_train,  
+        y_train_pred,  
     )
     mse_test = mean_squared_error(  
-        y_test,
+        y_test,  
         y_test_pred,  
     )
 
